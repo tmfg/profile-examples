@@ -30,8 +30,36 @@
                 </Zone>
             </members>
         </GeneralFrame>
-        
-        
+
+        <ServiceCalendarFrame version="1" id="NSR:ServiceCalendarFrame:1">
+            <dayTypes>
+                <DayType version="1" id="NSR:DayType:MondayToFriday">
+                    <Name>Monday to Friday</Name>
+                    <properties>
+                        <PropertyOfDay>
+                            <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+                        </PropertyOfDay>
+                    </properties>
+                </DayType>
+                <DayType version="1" id="NSR:DayType:Saturday">
+                    <Name>Saturday</Name>
+                    <properties>
+                        <PropertyOfDay>
+                            <DaysOfWeek>Saturday</DaysOfWeek>
+                        </PropertyOfDay>
+                    </properties>
+                </DayType>
+                <DayType version="1" id="NSR:DayType:Sunday">
+                    <Name>Sunday</Name>
+                    <properties>
+                        <PropertyOfDay>
+                            <DaysOfWeek>Sunday</DaysOfWeek>
+                        </PropertyOfDay>
+                    </properties>
+                </DayType>
+            </dayTypes>
+        </ServiceCalendarFrame>
+
         <SiteFrame version="1" id="NSR:SiteFrame:1">
             <groupsOfStopPlaces>
                 <GroupOfStopPlaces version="1" id="NSR:GroupOfStopPlaces:1234">
@@ -258,12 +286,12 @@
             <parkings>
                 <!-- ParkAndRide -->
                 <Parking id="NSR:Parking:1" version="1">
-                    <!-- Opening hours: open 06:00-midnight on business days, 06:00-22:00 on Saturdays, closed on Sundays. -->
+                    <!-- Opening hours: open 06:00-midnight from Monday to Friday, 06:00-22:00 on Saturdays, closed on Sundays. -->
                     <validityConditions>
                         <AvailabilityCondition id="NSR:AvailabilityCondition:1" version="1">
                             <IsAvailable>true</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef ref="NSR:DayType:BusinessDay"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:MondayToFriday"/>
                             </dayTypes>
                             <timebands>
                                 <!-- DayOffset 1 moves EndTime to the next day: 00:00:00 is midnight at the end of the day. -->
@@ -277,7 +305,7 @@
                         <AvailabilityCondition id="NSR:AvailabilityCondition:3" version="1">
                             <IsAvailable>true</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef ref="NSR:DayType:Saturday"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:Saturday"/>
                             </dayTypes>
                             <timebands>
                                 <Timeband id="NSR:Timeband:2" version="1">
@@ -289,7 +317,7 @@
                         <AvailabilityCondition id="NSR:AvailabilityCondition:2" version="1">
                             <IsAvailable>false</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef ref="NSR:DayType:Sunday"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:Sunday"/>
                             </dayTypes>
                         </AvailabilityCondition>
                     </validityConditions>
