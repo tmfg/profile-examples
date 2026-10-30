@@ -363,6 +363,9 @@
                     <TotalCapacity>125</TotalCapacity>
                     <OvernightParkingPermitted>true</OvernightParkingPermitted>
                     <RechargingAvailable>true</RechargingAvailable>
+                    <!-- The driver pays with a mobile device or at a staffed exit booth, by debit card or mobile phone -->
+                    <ParkingPaymentProcess>payByMobileDevice payAtExitBoothManualCollection</ParkingPaymentProcess>
+                    <PaymentMethods>debitCard mobilePhone</PaymentMethods>
                     <ParkingReservation>reservationAllowed</ParkingReservation>
                     <parkingAreas>
                         <ParkingArea id="NSR:ParkingArea:1" version="1">
@@ -394,10 +397,27 @@
                 <!-- Sykkelparkering (utendørs) -->
                 <Parking id="NSR:Parking:2" version="1">
                     <Lighting>poorlyLit</Lighting>
+                    <!-- The parking has bars to lock a bicycle to. The number of bars is unknown, so the bicycle spaces are in ParkingCapacity -->
+                    <placeEquipments>
+                        <CycleStorageEquipment id="NSR:CycleStorageEquipment:2" version="1">
+                            <CycleStorageType>bars</CycleStorageType>
+                        </CycleStorageEquipment>
+                    </placeEquipments>
                     <ParkingVehicleTypes>pedalCycle</ParkingVehicleTypes>
                     <TotalCapacity>20</TotalCapacity>
                     <OvernightParkingPermitted>true</OvernightParkingPermitted>
                     <ParkingReservation>noReservations</ParkingReservation>
+                    <parkingProperties>
+                        <ParkingProperties id="NSR:ParkingProperties:4" version="1">
+                            <spaces>
+                                <ParkingCapacity id="NSR:ParkingCapacity:3" version="1">
+                                    <ParkingUserType>allUsers</ParkingUserType>
+                                    <ParkingVehicleType>pedalCycle</ParkingVehicleType>
+                                    <NumberOfSpaces>20</NumberOfSpaces>
+                                </ParkingCapacity>
+                            </spaces>
+                        </ParkingProperties>
+                    </parkingProperties>
                 </Parking>
 
                 <!-- Sykkelparkering (lukket) -->
