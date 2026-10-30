@@ -33,24 +33,21 @@
 
         <ServiceCalendarFrame version="1" id="NSR:ServiceCalendarFrame:1">
             <dayTypes>
-                <DayType version="1" id="NSR:DayType:MondayToFriday">
-                    <Name>Monday to Friday</Name>
+                <DayType version="1" id="NSR:DayType:1">
                     <properties>
                         <PropertyOfDay>
                             <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
                         </PropertyOfDay>
                     </properties>
                 </DayType>
-                <DayType version="1" id="NSR:DayType:Saturday">
-                    <Name>Saturday</Name>
+                <DayType version="1" id="NSR:DayType:2">
                     <properties>
                         <PropertyOfDay>
                             <DaysOfWeek>Saturday</DaysOfWeek>
                         </PropertyOfDay>
                     </properties>
                 </DayType>
-                <DayType version="1" id="NSR:DayType:Sunday">
-                    <Name>Sunday</Name>
+                <DayType version="1" id="NSR:DayType:3">
                     <properties>
                         <PropertyOfDay>
                             <DaysOfWeek>Sunday</DaysOfWeek>
@@ -291,7 +288,7 @@
                         <AvailabilityCondition id="NSR:AvailabilityCondition:1" version="1">
                             <IsAvailable>true</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef version="1" ref="NSR:DayType:MondayToFriday"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:1"/>
                             </dayTypes>
                             <timebands>
                                 <!-- DayOffset 1 moves EndTime to the next day: 00:00:00 is midnight at the end of the day. -->
@@ -305,7 +302,7 @@
                         <AvailabilityCondition id="NSR:AvailabilityCondition:3" version="1">
                             <IsAvailable>true</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef version="1" ref="NSR:DayType:Saturday"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:2"/>
                             </dayTypes>
                             <timebands>
                                 <Timeband id="NSR:Timeband:2" version="1">
@@ -317,7 +314,7 @@
                         <AvailabilityCondition id="NSR:AvailabilityCondition:2" version="1">
                             <IsAvailable>false</IsAvailable>
                             <dayTypes>
-                                <DayTypeRef version="1" ref="NSR:DayType:Sunday"/>
+                                <DayTypeRef version="1" ref="NSR:DayType:3"/>
                             </dayTypes>
                         </AvailabilityCondition>
                     </validityConditions>
